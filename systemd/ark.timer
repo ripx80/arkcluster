@@ -1,0 +1,10 @@
+[Unit]
+Description=restarts every ark instance
+Requires=ark.service
+
+[Timer]
+Unit=ark.service
+OnCalendar=*-*-* 02:00:00
+
+[Install]
+WantedBy=timers.target

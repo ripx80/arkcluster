@@ -1,0 +1,26 @@
+version: "3.5"
+
+services:
+  island:
+    image: r15ch13/arkcluster:latest
+    env_file:
+      - cluster.env
+    environment:
+      SERVERMAP: "TheIsland"
+      SESSION_NAME: "Frost Cluster TheIsland"
+      RCON_PORT: 32330
+      GAME_PORT: 7777
+      QUERY_PORT: 27015
+    volumes:
+      - server_island:/ark
+      - cluster:/cluster
+    ports:
+      - "32330:32330/tcp"
+      - "7777:7777/udp"
+      - "7778:7778/udp"
+      - "27015:27015/udp"
+
+volumes:
+  server_island:
+  cluster:
+

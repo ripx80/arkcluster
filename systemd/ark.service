@@ -1,0 +1,13 @@
+[Unit]
+Description=Restart every ark instance
+Wants=ark.timer
+
+[Service]
+Type=oneshot
+User=rip
+Group=users
+TimeoutStartSec=0
+ExecStart=docker-compose -f /home/rip/ark/docker-compose.yml restart
+
+[Install]
+WantedBy=multi-user.target
